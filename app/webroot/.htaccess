@@ -3,4 +3,7 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+   
+    RewriteRule ^css/(.*\.css) combine.php?type=css&files=$1
+    RewriteRule ^js/(.*\.js) combine.php?type=javascript&files=$1
 </IfModule>
