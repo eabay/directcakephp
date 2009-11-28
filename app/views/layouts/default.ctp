@@ -11,8 +11,10 @@
     <?php
     $combine->js(array(
        (Configure::read('debug') > 0 ? 'ext/adapter/ext/ext-base-debug.js' : 'ext/adapter/ext/ext-base.js'),
-       (Configure::read('debug') > 0 ? 'ext/ext-all-debug.js' : 'ext/ext-all.js')
+       (Configure::read('debug') > 0 ? 'ext/ext-all-debug.js' : 'ext/ext-all.js'),
+       'app.js'
     ));
+    echo $javascript->link(Router::url('/direct/api', true));
     ?>
     <?php echo $content_for_layout; ?>
     <?php echo $cakeDebug; ?>
